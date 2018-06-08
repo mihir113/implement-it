@@ -1,0 +1,29 @@
+{
+
+  "manifest_version": 2,
+  "name": "Implement-It",
+  "author": "Mihir Jha",
+  "version": "1.8",
+
+  "description": "Oracle Support Internal Project: Manage SR in Implementation/DSE Portal",
+  "homepage_url": "https://www.oracle.com",
+  "icons": {
+    "48": "icons/DSE.png"
+  },
+  "permissions": [
+    "activeTab",
+	"https://*/"
+  ],
+  
+  "browser_action": {
+    "default_icon": "icons/DSE.png",
+    "default_title": "Implement-It",
+    "default_popup": "popup/updatesr.html"
+  },
+  "content_scripts": [
+  {
+    "matches": ["*://*.oracle.com/*"],
+    "js": ["popup/view.js"]
+  }
+  ]
+}

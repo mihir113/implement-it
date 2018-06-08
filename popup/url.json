@@ -1,0 +1,6 @@
+{
+  "getSR": "https://apex.oraclecorp.com/pls/apex/fusion_projects/implementation/get_comment/",
+  "updateSR": "https://apex.oraclecorp.com/pls/apex/fusion_projects/implementation/sr_update/",
+  "createSR":"https://apex.oraclecorp.com/pls/apex/fusion_projects/implementation/sr_create",
+  "getProject":"https://apex.oraclecorp.com/pls/apex/fusion_projects/implementation/get_project/"
+}

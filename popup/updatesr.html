@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Implement-IT!</title>
+      <link rel="stylesheet" type="text/css" href="view.css" media="all">
+      <script type="text/javascript" src="view.js"></script>
+   </head>
+   <body id="main_body">
+      <!--Hidden Field Start-->
+      <input id="csiHidden" type="hidden" name="csiHidden" > 
+      <!--Hidden Field End-->
+	  
+	  <!-- SR Update Completed -->
+      <div id ="hover_bkgr_fricc_srUpdate" class="hover_bkgr_new">
+         <span class="helper"></span>
+         <div style ="font-family: Lucida Console, Monaco, monospace;">
+            <p>SR Updated Successfully</p>
+            <div id="popupAccept">
+               <button id="btnOKServerUpdate" type=button>OK</button>
+            </div>
+         </div>
+      </div>
+	  
+	  <!-- SR Create Completed -->
+      <div id ="hover_bkgr_fricc_srCreate" class="hover_bkgr_new">
+         <span class="helper"></span>
+         <div style ="font-family: Lucida Console, Monaco, monospace;">
+            <p>SR Created Successfully</p>
+            <div id="popupAccept">
+               <button id="btnOKServerCreate" type=button>OK</button>
+            </div>
+         </div>
+      </div>
+	  
+	   <!-- SR Closed Completed -->
+      <div id ="hover_bkgr_fricc_srClosed" class="hover_bkgr_new">
+         <span class="helper"></span>
+         <div style ="font-family: Lucida Console, Monaco, monospace;">
+            <p>SR Closed Successfully</p>
+            <div id="popupAccept">
+               <button id="btnOKServerClosed" type=button>OK</button>
+            </div>
+         </div>
+      </div>
+	  
+      <!-- Timeout Error Div -->
+      <div id ="hover_bkgr_fricc_error" class="hover_bkgr_fricc">
+         <span class="helper"></span>
+         <div>
+            <p>Server Failed To Respond, Please Try Again!</p>
+            <div id="popupAccept">
+               <button id="btnOKServerError" type=button>OK</button>
+            </div>
+         </div>
+      </div>
+      <div id="initialize_user" class ="initialize_user">
+         <div id ="hover_bkgr_fricc" class="hover_bkgr_fricc">
+            <span class="helper"></span>
+            <div>
+               <div id="popupCloseButton" class="popupCloseButton">X</div>
+               <p>WARNING: You have requested access to a system containing data classified as Confidential- Highly Restricted under Oracle's <a href="https://my.oracle.com/content/web/CNT1207582" target="_blank">Information Protection Policy</a>. You may access this system only <br/>
+                  (1) in connection with providing Support services to the identified customer or <br/>
+                  (2) for other legitimate business purposes approved in advance by Oracle executive management.
+               </p>
+               <div id="popupAccept">
+                  <button id="btnAccept" type=button>Accept & Continue</button>
+               </div>
+            </div>
+         </div>
+         <div id="onetimeReg" class ="onetimeReg">
+            <label id="lblOneTimeReg" class="onetimeReg">Hey, Let's Get You Started</label>
+         </div>
+         <label class="lblEmail">Enter your Oracle Email:</label>
+         <div>
+            <br/>
+            <input type="email" id="email_add" name="email_add" size="40">
+            <button id="btnUpdateEmail" type=button>Update</button>
+         </div>
+      </div>
+      <div id="error_content">
+         <img src="/icons/notification_error.png">
+         </img>
+         <p class ="errorMsg"> App only works on MOS SR pages</p>
+         <p> Navigate to an existing SR to use this App </p>
+         <p> Note: Ensure you are connected to Oracle network.</p>
+      </div>
+      <!--Div to Show a loader -->
+      <div id="loader">
+         <img src="/icons/Processing.gif"></img>
+      </div>
+      <div id="form_container">
+         <h1><a>Implement-IT!</a></h1>
+         <form id="form_2599" class="appnitro" method="post" action="">
+            <div class="form_description">
+               <h2>Implement-IT ! v1.8</h2>
+               <p>Manage SR in DSE / Implementation Portal</p>
+            </div>
+            <ul>
+               <li id="li_1">
+                  <label class="description" for="element_1">SR# </label>
+                  <div>
+                     <input id="element_1" name="element_1" class="element text medium1" type="text" maxlength="255" value="" style ="opacity: 0.7;" readonly="readonly"/>
+                  </div>
+               </li>
+               <li id="li_2">
+                  <table border="0">
+                     <tr class="description">
+                        <th class="description">STATUS</th>
+                        <th>SEVERITY</th>
+                        <th>OWNER</th>
+                     </tr>
+                     <tr>
+                        <td style ="width:80%;">
+                           <select id="srStatusSelect" >
+                              <option value="Open">Open</option>
+                              <option value="Closed">Closed</option>
+                              <option value="New">New</option>
+                           </select>
+                        </td>
+                        <td style ="width:40%;">
+                           <select id="severity" >
+                              <option value="1">1-Critical</option>
+                              <option value="2">2-Significant</option>
+                              <option value="3">3-Standard</option>
+                              <option value="4">4-Minimal</option>
+                           </select>
+                        </td>
+                        <td style ="width:80%;">
+                           <input id="srOwner" name="srOwner" type="email" maxlength="255" value=""/>
+                        </td>
+                     </tr>
+                  </table>
+               </li>
+               <li id="li_2">
+                  <div id="projDiv">
+                     <label class="description" for="element_1">PROJECT NAME: </label>
+                     <select name="projName" id="projName" style="width: 550px;">
+                        <option value="" disabled selected>Select</option>
+                     </select>
+                  </div>
+               </li>
+               <li id="li_1">
+                  <label class="description" for="element_1">SR SUMMARY </label>
+                  <div>
+                     <input id="summaryTxt" name="summaryTxt" class="element text medium1" type="text" maxlength="255" value=""/>
+                  </div>
+               </li>
+               <li id="li_2">
+                  <div>
+                     <div id="lblSRUpd1">
+                        <label id="lblSRUpdate" class="description" for="element_2">STATUS UPDATE</label>
+                     </div>
+                     <div id="lblSRClose1">
+                        <label id="lblSRCloseUpdate" class="description" for="element_2">CLOSED SR COMMENTS</label>
+                     </div>
+                     <div>
+                        <textarea id="element_2" name="element_2" class="element textarea medium"></textarea>
+                     </div>
+                  </div>
+               </li>
+               <li class="buttons">
+                  <input type="hidden" name="form_id" value="2934" />
+                  <input id="saveForm" type="submit" name="submit" value="Submit" />
+               </li>
+               <center>
+                  <div>
+                     Click <a href="https://apex.oraclecorp.com/pls/apex/f?p=28935:HOME:351572004151:::::" target="_blank">here</a> to go to DSE / Implementation Portal.
+                  </div>
+               </center>
+            </ul>
+         </form>
+         <div id="footer">
+            <span>
+            <a href="https://confluence.oraclecorp.com/confluence/display/~mihir.jha@oracle.com/Implement-IT" target="_blank"
+            </span>
+            <span>
+            ~MJ~</a>
+            </span>
+         </div>
+      </div>
+   </body>
+   <script src=manageStorage.js></script>
+   <script src=initNewUser.js></script>
+   <script src=srUpdateFromImplPortal.js></script>
+   <script src=projectDetails.js></script>
+   <script src=srDetailsFromMOS.js></script>
+   <script src=checkConnection.js></script>
+   <script src=getURLFromFile.js></script>
+   <script src=updateOpenSRInPortal.js></script>
+   <script src=closeOpenSRInPortal.js></script>
+   <script src=createNewSRInPortal.js></script>
+   <script src=errorHandling.js></script>
+   
+</html>
